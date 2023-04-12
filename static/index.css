@@ -1,0 +1,10 @@
+:root {
+  --line-length: 60rem;
+}
+
+#registry .actions .edit {
+  --hx-boost: true;
+  --hx-select: "#augmentation";
+  --hx-target: "#augmentation";
+  --hx-swap: outerHTML;
+}
