@@ -10,12 +10,12 @@
     "jsxImportSource": "$jsx"
   },
   "imports": {
+    "@/": "./",
     "$std/": "https://deno.land/std@0.182.0/",
     "$http_fns/": "https://deno.land/x/http_fns@v0.0.7/",
     "$http_render_fns/": "https://deno.land/x/http_render_fns@v0.0.1/",
     "$jsx/": "https://deno.land/x/http_render_fns@v0.0.1/jsx_preact/",
     "$jsx/jsx-runtime": "https://deno.land/x/http_render_fns@v0.0.1/jsx_preact/jsx-runtime.ts",
-    "$/": "./",
     "preact": "https://esm.sh/preact@10.13.2",
     "preact/": "https://esm.sh/*preact@10.13.2/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.0.2"
