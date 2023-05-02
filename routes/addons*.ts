@@ -30,7 +30,7 @@ function registryProxy(req: Request, info: URLPatternResult) {
   const headers = new Headers(req.headers);
   headers.set(BASE_REQ_URL_HEADER, new URL(basePath(info), req.url).href);
 
-  return fetch(url, { method, headers, body });
+  return fetch(url, { method, headers, body, redirect: "manual" });
 }
 
 function basePath({ pathname }: URLPatternResult) {
