@@ -22,7 +22,7 @@ export function Page({ breadcrumbs = [], content, children }: Props) {
         <script src="/addons/-/index.js" defer />
         <link rel="stylesheet" href="/addons/-/index.css" />
       </head>
-      <body hx-boost="true">
+      <body>
         <header>
           <div id="x-header-above" />
           <h1>Augmented Hypermedia Host App</h1>
