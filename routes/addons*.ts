@@ -34,7 +34,10 @@ function registryProxy(req: Request, info: URLPatternResult) {
 }
 
 function basePath({ pathname }: URLPatternResult) {
-  return pathname.input.slice(0, -pathname.groups[0].length || undefined);
+  return pathname.input.slice(
+    0,
+    -(pathname.groups?.[0]?.length || 0) || undefined,
+  );
 }
 
 async function fullPage(req: Request, res: Response | Skip) {

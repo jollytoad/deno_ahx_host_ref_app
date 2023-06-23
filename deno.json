@@ -1,9 +1,10 @@
 {
   "tasks": {
-    "gen": "deno run --allow-net --allow-read=./routes,./routes.ts --allow-write=./routes.ts gen.ts",
+    "gen": "deno run --config=deno.json --allow-net --allow-read=./routes,./routes.ts --allow-write=./routes.ts https://deno.land/x/ahx_fns@v0.0.10/scripts/gen.ts",
     "start": "deno run --allow-env=PORT,REGISTRY_URL --allow-net --allow-read --allow-write=./routes.ts --watch dev.ts",
     "start:prod": "deno run --allow-env=REGISTRY_URL --allow-net --allow-read main.ts",
-    "deploy": "deno run --allow-net --allow-read --allow-write --allow-env https://deno.land/x/deploy@1.5.0/deployctl.ts deploy --import-map=deno.json --project=ahx-preview-host-ref main.ts"
+    "deploy": "deno run --allow-net --allow-read --allow-write --allow-env https://deno.land/x/deploy@1.5.0/deployctl.ts deploy --import-map=deno.json --project=ahx-preview-host-ref main.ts",
+    "check": "deno fmt && deno lint && deno --unstable check **/*.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -11,13 +12,11 @@
   },
   "imports": {
     "@/": "./",
-    "$std/": "https://deno.land/std@0.182.0/",
-    "$http_fns/": "https://deno.land/x/http_fns@v0.0.7/",
-    "$http_render_fns/": "https://deno.land/x/http_render_fns@v0.0.1/",
-    "$jsx/": "https://deno.land/x/http_render_fns@v0.0.1/jsx_preact/",
-    "$jsx/jsx-runtime": "https://deno.land/x/http_render_fns@v0.0.1/jsx_preact/jsx-runtime.ts",
-    "preact": "https://esm.sh/preact@10.13.2",
-    "preact/": "https://esm.sh/*preact@10.13.2/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.0.2"
+    "$std/": "https://deno.land/std@0.192.0/",
+    "$http_fns/": "https://deno.land/x/http_fns@v0.0.15/",
+    "$http_render_fns/": "https://deno.land/x/http_render_fns@v0.0.4/",
+    "$ahx_fns/": "https://deno.land/x/ahx_fns@v0.0.10/",
+    "$jsx/": "https://deno.land/x/jsx_stream@v0.0.7/",
+    "$jsx/jsx-runtime": "https://deno.land/x/jsx_stream@v0.0.7/jsx-runtime.ts"
   }
 }

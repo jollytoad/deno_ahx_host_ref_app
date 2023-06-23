@@ -1,6 +1,8 @@
-import gen from "./gen.ts";
-import main from "./main.ts";
-import { port } from "$http_fns/port.ts";
+import { load } from "$std/dotenv/mod.ts";
+import { serve } from "$ahx_fns/http/dev_server.ts";
+import handler from "@/handler.ts";
+import init from "@/init.ts";
 
-await gen();
-await main(port());
+await load({ export: true });
+
+await serve(handler, init);
