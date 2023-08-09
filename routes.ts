@@ -2,12 +2,10 @@
 
 import { byPattern } from "$http_fns/pattern.ts";
 import { cascade } from "$http_fns/cascade.ts";
-import route_1 from "./routes/api/private.ts";
-import route_2 from "./routes/addons*.ts";
-import route_3 from "./routes/index.ts";
+import { lazy } from "$http_fns/lazy.ts";
 
 export default cascade(
-  byPattern("/api/private", route_1),
-  byPattern("/addons*", route_2),
-  byPattern("/", route_3),
+  byPattern("/api/private", lazy(() => import("./routes/api/private.ts"))),
+  byPattern("/addons*", lazy(() => import("./routes/addons*.ts"))),
+  byPattern("/", lazy(() => import("./routes/index.ts"))),
 );

@@ -1,7 +1,6 @@
 import { renderHTML } from "$http_render_fns/render_html.tsx";
 import { interceptResponse } from "$http_fns/intercept.ts";
-import type { Skip } from "$http_fns/types.ts";
-import { notFound } from "$http_fns/response.ts";
+import { notFound } from "$http_fns/response/not_found.ts";
 import { Page } from "@/components/Page.tsx";
 
 const FULL_PAGE_HEADER = "AHX-Full-Page";
@@ -40,7 +39,7 @@ function basePath({ pathname }: URLPatternResult) {
   );
 }
 
-async function fullPage(req: Request, res: Response | Skip) {
+async function fullPage(req: Request, res: Response | null) {
   if (isHtml(res) && isFullPage(res)) {
     return renderHTML(Page)(req, {
       breadcrumbs: [["Home", "/"], ["", res.url]],
@@ -49,10 +48,10 @@ async function fullPage(req: Request, res: Response | Skip) {
   }
 }
 
-function isHtml(res: Response | Skip): res is Response {
+function isHtml(res: Response | null): res is Response {
   return res?.headers.get("content-type")?.startsWith("text/html") || false;
 }
 
-function isFullPage(res: Response | Skip): res is Response {
+function isFullPage(res: Response | null): res is Response {
   return res?.headers.has(FULL_PAGE_HEADER) || false;
 }

@@ -1,6 +1,6 @@
 // deno-lint-ignore-file require-await
 import { byMethod } from "$http_fns/method.ts";
-import { ok } from "$http_render_fns/response.ts";
+import { ok } from "$http_fns/response/ok.ts";
 
 export default byMethod({
   GET: getSuperSecretData,
