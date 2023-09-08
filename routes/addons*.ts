@@ -1,7 +1,7 @@
 import { renderHTML } from "$http_render_fns/render_html.tsx";
 import { interceptResponse } from "$http_fns/intercept.ts";
 import { notFound } from "$http_fns/response/not_found.ts";
-import { Page } from "@/components/Page.tsx";
+import { Page } from "../components/Page.tsx";
 
 const FULL_PAGE_HEADER = "AHX-Full-Page";
 const BASE_REQ_URL_HEADER = "AHX-Base-Req-URL";

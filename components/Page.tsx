@@ -15,7 +15,7 @@ export function Page({ breadcrumbs = [], content, children }: Props) {
         <title>Host App - Ahh!</title>
         <link
           rel="stylesheet"
-          href="https://the.missing.style/v1.0.8/missing.min.css"
+          href="https://unpkg.com/missing.css@1.1.0/dist/missing.min.css"
         />
         <link rel="stylesheet" href="/index.css" />
 
