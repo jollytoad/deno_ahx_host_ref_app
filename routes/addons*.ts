@@ -42,7 +42,7 @@ function basePath({ pathname }: URLPatternResult) {
 async function fullPage(req: Request, res: Response | null) {
   if (isHtml(res) && isFullPage(res)) {
     return renderHTML(Page)(req, {
-      breadcrumbs: [["Home", "/"], ["", res.url]],
+      breadcrumbs: [["Home", "/"], ["", req.url]],
       content: await res.text(),
     });
   }

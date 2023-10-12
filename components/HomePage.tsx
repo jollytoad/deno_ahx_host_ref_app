@@ -34,7 +34,9 @@ export function HomePage() {
       <section class="box">
         <h4>Full-page Addons</h4>
 
-        <ul id="pages" hx-boost="false"></ul>
+        <ul>
+          <slot name="pages" />
+        </ul>
       </section>
     </Page>
   );

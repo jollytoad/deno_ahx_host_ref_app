@@ -9,10 +9,10 @@ interface Props {
 
 export function Page({ breadcrumbs = [], content, children }: Props) {
   return (
-    <html hx-ext="css-rules" data-host-app="ref">
+    <html ahx-host="ref">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Host App - Ahh!</title>
+        <title>Host App - ahx!</title>
         <link
           rel="stylesheet"
           href="https://unpkg.com/missing.css@1.1.0/dist/missing.min.css"
@@ -24,22 +24,28 @@ export function Page({ breadcrumbs = [], content, children }: Props) {
       </head>
       <body>
         <header>
-          <div id="x-header-above" />
-          <h1>Augmented Hypermedia Host App</h1>
-          <div id="x-header-middle" />
-          <Breadcrumbs breadcrumbs={breadcrumbs ?? []} />
-          <div id="x-header-below" />
+          <slot name="header-above" />
+          <slot name="title">
+            <h1>Augmented Hypermedia Host App</h1>
+          </slot>
+          <slot name="header-middle" />
+          <slot name="breadcrumbs">
+            <Breadcrumbs breadcrumbs={breadcrumbs ?? []} />
+          </slot>
+          <slot name="header-below" />
         </header>
 
         <main
           dangerouslySetInnerHTML={content ? { __html: content } : undefined}
         >
+          <slot name="main-above" />
           {children}
+          <slot name="main-below" />
         </main>
 
         <footer>
-          <div id="x-footer-above" />
-          <div id="x-footer-below" />
+          <slot name="footer-above" />
+          <slot name="footer-below" />
         </footer>
       </body>
     </html>
