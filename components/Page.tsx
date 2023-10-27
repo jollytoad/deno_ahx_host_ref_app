@@ -9,7 +9,7 @@ interface Props {
 
 export function Page({ breadcrumbs = [], content, children }: Props) {
   return (
-    <html ahx-host="ref">
+    <html lang="en" ahx-host="ref">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Host App - ahx!</title>

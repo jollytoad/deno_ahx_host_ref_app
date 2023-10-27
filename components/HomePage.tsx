@@ -34,9 +34,7 @@ export function HomePage() {
       <section class="box">
         <h4>Full-page Addons</h4>
 
-        <ul>
-          <slot name="pages" />
-        </ul>
+        <ul ahx-slot-name="addon-links"></ul>
       </section>
     </Page>
   );

@@ -43,6 +43,7 @@ async function fullPage(req: Request, res: Response | null) {
   if (isHtml(res) && isFullPage(res)) {
     return renderHTML(Page)(req, {
       breadcrumbs: [["Home", "/"], ["", req.url]],
+      // TODO: stream content
       content: await res.text(),
     });
   }
