@@ -1,0 +1,24 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/denoland/deno" {
+  version = "0.1.0"
+  hashes = [
+    "h1:mv8pZMYFAv8ukNnAhfgp32CgrY23G8lu1pzGHcKcv4w=",
+    "zh:08422270dacecc58fbbb37a301f1fe17a4ffaa438010211a271018944715ef9f",
+    "zh:09f1bd93464fc7ecf659f7df457c049c57f6c1b90be21f06b0736a222adc38b5",
+    "zh:3f0feb17babd7f0a8241c3de82dadc04195dce729031219408e621932f2886ac",
+    "zh:42c115b08e1668538cc868db2669abdacd5e137e3d91af6c2949297b96c14c22",
+    "zh:46956eff2dc0f80531340e8a1882916ee650a6a3aee940f014db2dc5148dddc7",
+    "zh:59b56fa561833dffbf0e369822892d43009f4ad087c17c2f805cdfeff361264a",
+    "zh:7eb76da673c28230b03dc5a51bd4f728622856e6c190bf571adc393e29b89d45",
+    "zh:aad4ea651e97740f788c02e3154604b86ad67c0cb1dce67e59eaef8e105256d6",
+    "zh:c798081b9890930ceadee57342775e44dafd4c34f6fced7898e08d303c7add61",
+    "zh:cfd421868b07239d51c2c777a3c152916768fb6ce305b84551a4c1f4d518a3d8",
+    "zh:d791d097d7c056e62080cf4008109d8104f70433add13fd7e7ac20b6498a4695",
+    "zh:da8057d9734067eb67484cf7e82cad9c5c5ed0159607e93f8ee31e6d1abfb326",
+    "zh:db713315d15f5b0ffff65194ff01acb28cceb5c810d06ca9e1114ff4bab80396",
+    "zh:dd0de84611259391e582336f9d345ddbcfe0e0170035590b399c7711feab35bf",
+    "zh:f809ab383cca0a5f83072981c64208cbd7fa67e986a86ee02dd2c82333221e32",
+  ]
+}

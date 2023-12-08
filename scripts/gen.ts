@@ -4,8 +4,8 @@ function generateRoutes() {
   console.debug("Generating routes");
 
   return generateRoutesModule({
-    fileRootUrl: import.meta.resolve("../routes"),
-    moduleOutUrl: import.meta.resolve("../routes.ts"),
+    fileRootUrl: import.meta.resolve("../src/routes"),
+    moduleOutUrl: import.meta.resolve("../src/routes.ts"),
     httpFns: "$http_fns/",
     verbose: true,
   });

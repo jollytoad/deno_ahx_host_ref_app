@@ -1,12 +1,12 @@
 {
   "tasks": {
-    "gen": "deno run --config=deno.json --allow-net --allow-read=./routes,./routes.ts --allow-write=./routes.ts scripts/gen.ts",
-    "start": "deno run --allow-env --allow-net --allow-read --allow-write=./routes.ts --watch scripts/dev.ts",
+    "gen": "deno run --config=deno.json --allow-net --allow-read=src/routes,src/routes.ts --allow-write=src/routes.ts scripts/gen.ts",
+    "start": "deno run --allow-env --env --allow-net --allow-read --allow-write=src/routes.ts --watch scripts/dev.ts",
     "start:prod": "deno run --allow-env=REGISTRY_URL --allow-net --allow-read main.ts",
     "mkcert": "mkcert -install -key-file localhost-key.pem -cert-file localhost-cert.pem localhost",
-    "deploy": "deno run --allow-net --allow-read --allow-write --allow-env https://deno.land/x/deploy@1.8.2/deployctl.ts deploy --import-map=deno.json --project=ahx-preview-host-ref main.ts",
+    "deploy": "deno run --allow-net --allow-read --allow-write --allow-env --allow-sys https://deno.land/x/deploy@1.9.0/deployctl.ts deploy",
     "check": "deno fmt && deno lint && deno check **/*.ts",
-    "lock": "rm -f deno.lock && deno check main.ts"
+    "lock": "rm -f deno.lock && deno check src/main.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -19,5 +19,11 @@
     "$http_render_fns/": "https://deno.land/x/http_render_fns@v0.1.0/lib/",
     "$jsx/": "https://deno.land/x/jsx_stream@v0.0.13/",
     "$jsx/jsx-runtime": "https://deno.land/x/jsx_stream@v0.0.13/jsx-runtime.ts"
+  },
+  "deploy": {
+    "project": "ahx-preview-host-ref",
+    "exclude": [],
+    "include": [],
+    "entrypoint": "src/main.ts"
   }
 }
