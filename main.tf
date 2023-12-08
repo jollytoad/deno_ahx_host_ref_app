@@ -13,7 +13,7 @@ resource "deno_project" "ref_app_project" {
 }
 
 data "deno_assets" "ref_app_assets" {
-  path = "src"
+  path = "app"
   pattern = "**/*.{ts,tsx,json,css}"
 }
 
